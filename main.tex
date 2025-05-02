@@ -1,0 +1,160 @@
+\documentclass[10pt,landscape]{article}
+
+% --- Core packages ---
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{multicol,multirow}
+\usepackage{calc,ifthen}
+
+% --- Page layout ---
+\usepackage[landscape,margin=0.2in]{geometry}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+\setlength{\columnseprule}{0.2pt}  % Faint separator line between columns
+
+% --- Links and quotes ---
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[autostyle,english=american]{csquotes}
+\MakeOuterQuote{"}
+
+% --- Highlighting macros ---
+\usepackage{soul}
+\newcommand{\hlyellow}[1]{\sethlcolor{yellow}\hl{#1}\sethlcolor{yellow}}
+\newcommand{\hlblue}[1]{\sethlcolor{cyan}\hl{#1}\sethlcolor{yellow}}
+\newcommand{\hlgreen}[1]{\sethlcolor{lime}\hl{#1}\sethlcolor{yellow}}
+\newcommand{\hlpink}[1]{\sethlcolor{pink}\hl{#1}\sethlcolor{yellow}}
+
+% --- Algorithm formatting ---
+\usepackage[ruled,vlined]{algorithm2e}
+
+% --- Section formatting ---
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}
+  {-1ex plus -.5ex minus -.2ex}
+  {0.5ex plus .2ex}
+  {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}
+  {-1ex plus -.5ex minus -.2ex}
+  {0.5ex plus .2ex}
+  {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}
+  {-1ex plus -.5ex minus -.2ex}
+  {1ex plus .2ex}
+  {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+
+% --- Multicol layout tweaks ---
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+\footnotesize
+
+% === Page 1 ===
+\begin{center}
+  \small{\textbf{Module Code and Name (Location of Exam, Seat \#XX)}}
+\end{center}
+\begin{multicols}{3}
+
+\section{Math Equations}
+
+\begin{itemize}
+    \item The equation of a straight line is $y=mx+c$.
+    \item The solution to the quadratic formula $ax^2+bx+c=0$ is 
+        \begin{equation} \label{eq:1}
+            x=\frac{-b \pm \sqrt{b^2-4ac}}{2a}
+        \end{equation}
+    \item ~\eqref{eq:1} has no real roots if the discriminant $b^2-4ac<0$.
+\end{itemize}
+
+\section{Algorithms}
+
+\begin{algorithm}[H]
+    \SetAlgoLined
+    \KwIn{Two numbers $a$ and $b$}
+    \KwOut{Sum $s = a + b$}
+    
+    $s \leftarrow a + b$ \;
+    \Return $s$ \;
+    
+    \caption{Add Two Numbers}
+\end{algorithm}
+
+\begin{algorithm}[H]
+    \SetAlgoLined
+    \KwIn{Two numbers $a$ and $b$}
+    \KwOut{Product $s = a \times b$}
+        
+    $s \leftarrow a \times b$ \;
+    \Return $s$ \;
+        
+    \caption{Multiply Two Numbers}
+\end{algorithm}
+
+\section{Tables}
+
+\begin{equation} \label{eq:2}
+\begin{array}{c|cc}
+    \text{Actual} \backslash \text{Predicted} & 0 & 1 \\ 
+    \hline 
+    0 & a = \text{TN} & b = \text{FP} \\ 
+    1 & c = \text{FN} & d = \text{TP}
+\end{array}
+\end{equation}
+
+\begin{itemize}
+    \item \href{https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/}{ROC Curve:}
+           The $x$ axis plots the FPR $\frac{b}{a+b}$ and $y$ axis plots the TPR $\frac{d}{c+d}$ at different \hlyellow{thresholds}.
+    \item A concise metric is the AUC of the ROC. 
+\end{itemize}
+        
+    
+
+\newpage
+\end{multicols}
+\newpage
+
+% === Page 2 ===
+\begin{center}
+  \small{\textbf{Module Code and Name (Location of Exam, Seat \#XX)}}
+\end{center}
+\begin{multicols}{3}
+% Your content here...
+
+\newpage
+\end{multicols}
+\newpage
+
+% === Page 3 ===
+\begin{center}
+  \small{\textbf{Module Code and Name (Location of Exam, Seat \#XX)}}
+\end{center}
+\begin{multicols}{3}
+% Your content here...
+
+\newpage
+\end{multicols}
+
+\newpage
+
+% === Page 4 ===
+\begin{center}
+  \small{\textbf{Module Code and Name (Location of Exam, Seat \#XX)}}
+\end{center}
+\begin{multicols}{3}
+% Your content here...
+
+\newpage
+\end{multicols}
+
+\end{document}
